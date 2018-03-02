@@ -1,0 +1,53 @@
+// Width variables (appears count calculates by raw css)
+@width1: 172px; // Appears 2 times
+
+// Height variables (appears count calculates by raw css)
+@height1: 129px; // Appears 2 times
+
+.my-books-panel {
+    top:50px;
+    padding:30px;
+    width:80%;
+    margin:auto;
+    background-color: white;
+  }
+
+
+.book-body-small {
+  background-color:ghostwhite;
+  height: @height1;
+  margin: 14px;
+  width: @width1;
+  float:left;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.book-footer-small {
+  height: 30px;
+  left: 10px;
+  margin:8px;
+}
+.book-preview-image {
+  margin-top: 0px;
+  margin:auto;
+  max-height: @height1;
+  max-width: @width1;
+  left:0px;
+  float:left;
+  width:170px;
+  height:127px;
+  border:1px solid #aaa;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.book-title {
+  padding-top: 10px;
+  width: 170px;
+  text-align: center;
+  clear: left;
+  color: #989f8b;
+  font-weight: normal;
+  font-size: 10px;
+}
