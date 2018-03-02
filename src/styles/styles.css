@@ -1,0 +1,56 @@
+/* Styles */
+#app {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  min-width: 550px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+a.active {
+  color: orange;
+}
+
+nav {
+  padding-top: 20px;
+}
+
+
+////////////////////////////////////////////
+.book-body-small {
+  background-color:ghostwhite;
+  height: @height1;
+  margin: 14px;
+  width: @width1;
+  float:left;
+  cursor: pointer;
+  cursor: hand;
+}
+.book-footer-small {
+  height: 30px;
+  left: 10px;
+  margin:8px;
+}
+.book-preview-image {
+  margin-top: 0px;
+  margin:auto;
+  max-height: @height1;
+  max-width: @width1;
+  left:0px;
+  float:left;
+  width:170px;
+  height:127px;
+  border:1px solid #aaa;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.book-title {
+  padding-top: 10px;
+  width: 170px;
+  text-align: center;
+  clear: left;
+  color: #989f8b;
+  font-weight: normal;
+  font-size: 10px;
+}
