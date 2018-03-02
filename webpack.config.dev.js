@@ -24,43 +24,34 @@ export default {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          {
-            loader: "css-loader", option: {
-              modules: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          { loader: "style-loader" },
-          {
-            loader: "css-loader", option: {
-              modules: true
-            }
-          },
-          {
-            loader: "less-loader", option: {
-              modules: true
-            }
-          }
-        ]
-      }
-    ]
-    // loaders: [
-    //   { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
-    //   { test: /(\.css)$/, loaders: ['style', 'css'] },
-    //   { test: /(\.less)$/, loaders: ['style', 'css', 'less'] },
-    //   { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-    //   { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
-    //   { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-    //   { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+    // rules: [
+    //   {
+    //     test: /\.css$/,
+    //     use: [
+    //       { loader: "style-loader" },
+    //       { loader: "css-loader" }
+    //     ]
+    //   },
+    //   {
+    //     test: /\.less$/,
+    //     use: [
+    //       { loader: "style-loader" },
+    //       { loader: "css-loader"
+    //       },
+    //       {
+    //         loader: "less-loader"
+    //       }
+    //     ]
+    //   }
     // ]
+    loaders: [
+      { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
+      { test: /(\.css)$/, loaders: ['style', 'css'] },
+      { test: /(\.less)$/, loaders: ['style', 'css', 'less'] },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+    ]
   }
 };
