@@ -3,32 +3,33 @@
 
 // Height variables (appears count calculates by raw css)
 @height1: 129px; // Appears 2 times
-
-.my-books-panel {
-    top:50px;
-    padding:30px;
-    width:80%;
-    margin:auto;
-    background-color: white;
-  }
+@color0: #ff9710; // Appears 2 times
 
 .book-list-panel {
-    top:50px;
-    padding:30px;
-    width:80%;
-    margin:auto;
-    background-color: rgb(207, 51, 51);
+  position: relative;
+  height: auto;
+  top:50px;
+  padding:30px;
+  width:80%;
+  margin:auto;
+  background-color: rgb(116, 146, 145);
+  //display:table //-- center float content
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.book-body-small {
-  background-color:ghostwhite;
-  height: @height1;
-  margin: 14px;
-  width: @width1;
-  float:left;
-  cursor: pointer;
-  cursor: hand;
-}
+.book-panel-small { 
+     background-color: transparent;
+     height: 200px;
+     margin-top: 10px;
+     width: 208px; 
+  &:hover {
+    background-color: @color0;
+    border: 2px solid #ff9710;
+    cursor: pointer;
+    cursor:hand;
+  }
+ }  
 
 .book-footer-small {
   height: 30px;
@@ -58,3 +59,4 @@
   font-weight: normal;
   font-size: 10px;
 }
+.clear { clear: both; }
