@@ -47,6 +47,7 @@ export default {
     loaders: [
       { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
       { test: /(\.css)$/, loaders: ['style', 'css'] },
+      { test: /(\.json)$/, loaders: ['json'] },
       { test: /(\.less)$/, loaders: ['style', 'css', 'less'] },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },

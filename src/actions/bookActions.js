@@ -6,13 +6,13 @@ export function loadBooksSuccess(books) {
 }
 
 export function loadBooks() {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch(beginAjaxCall());
     let url = "http://stapi.storytoaster.com/books?count=20&mode=random";
 
     return fetch(url)
       .then(resp => resp.json()) // Transform the data into json
-      .then(function(books) {
+      .then(function (books) {
         dispatch(loadBooksSuccess(books));
       })
       .catch(error => {

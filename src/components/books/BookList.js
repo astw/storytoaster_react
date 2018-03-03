@@ -2,7 +2,7 @@ import React, { PropTypes } from "react";
 import BookTile from "./BookTile";
 
 const BookList = ({ books }) => {
-  return <div>{books.map(book => <BookTile key={book.id} book={book} />)}</div>;
+  return <div className="book-list-panel">{books.map(book => <BookTile key={book.id} book={book} />)}</div>;
 };
 
 BookList.propTypes = {
