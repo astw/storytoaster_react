@@ -54,10 +54,14 @@ export class BookTile extends React.Component {
     let imageData = JSON.parse(theBook.frontCover.imageData);
     imageData.objects = imageData.objects.map(function(item){
        if(item.src='http://storytoaster.com/assets/images/blank.jpg'){
-         item.src="";
-         console.log("clear src")
+//         item.src="";
+           console.log("clear src")
        } 
-
+ 
+      //  if(item.type =='IText'){
+      //     item.type = 'StoryToasterIText';
+      //  }
+ 
       //  if(item.type =='storyToasterIText'){
       //     item.type = 'storyToasterIText';
       //  }
