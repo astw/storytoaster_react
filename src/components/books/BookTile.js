@@ -26,59 +26,37 @@ export class BookTile extends React.Component {
     var canvasWidth = 170;
     var canvasHeight = 127;
     canvas.setWidth(canvasWidth);
-    canvas.setHeight(canvasHeight); 
+    canvas.setHeight(canvasHeight);  
 
-    var  storyTextBox = new fabric.IText ('StoryToasterIText',{
-      fontSize: 16,
-      width:200,
-      height:600,
-      fontFamily: 'Arial',
-      textAlign: 'left'
-    });
-
-    canvas.add(storyTextBox);
-
-    var storyTextBox2 = new fabric.IText ('StoryToasterIText2',{
-      fontSize: 16,
-      width:200,
-      height:600,
-      fontFamily: 'Arial',
-      textAlign: 'left'
-    });
-
-    canvas.add(storyTextBox2);
-
-    let content  = JSON.stringify(canvas);
-    console.log("origin:", content); 
-
-    let imageData = JSON.parse(theBook.frontCover.imageData);
-    imageData.objects = imageData.objects.map(function(item){
-       if(item.src='http://storytoaster.com/assets/images/blank.jpg'){
-//         item.src="";
-           console.log("clear src")
-       } 
+//     let content  = JSON.stringify(canvas);  
+//     let imageData = JSON.parse(theBook.frontCover.imageData);
+//     imageData.objects = imageData.objects.map(function(item){
+// //        if(item.src='http://storytoaster.com/assets/images/blank.jpg'){
+// // //         item.src="";
+// //            console.log("clear src")
+// //        } 
  
-      //  if(item.type =='IText'){
-      //     item.type = 'StoryToasterIText';
-      //  }
+//       //  if(item.type =='IText'){
+//       //     item.type = 'StoryToasterIText';
+//       //  }
  
-      //  if(item.type =='storyToasterIText'){
-      //     item.type = 'storyToasterIText';
-      //  }
+//       //  if(item.type =='storyToasterIText'){
+//       //     item.type = 'storyToasterIText';
+//       //  }
 
-      // item.version="2.1.0";
+//       // item.version="2.1.0";
 
-      //  let newItem = Object.assign({version:"2.1.0"}, item); 
-      //  return newItem; 
-      return item;
-    }); 
+//       //  let newItem = Object.assign({version:"2.1.0"}, item); 
+//       //  return newItem; 
+//       return item;
+//     }); 
     // imageData.version = "2.1.0"; 
     // imageData = Object.assign({version:"2.1.0"}, imageData);  
-    theBook.frontCover.imageData = JSON.stringify(imageData);  
+    // theBook.frontCover.imageData = JSON.stringify(imageData);  
 
     canvas.clear();  
  
-    content = JSON.stringify(imageData);  
+    var content = theBook.frontCover.imageData;
 
     canvas.loadFromJSON(content, canvas.renderAll.bind(canvas), function(o, object) {
         fabric.log(o, object);

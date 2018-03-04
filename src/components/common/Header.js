@@ -13,6 +13,10 @@ const Header = ({ loading }) => {
         Courses
       </Link>
       {" | "}
+      <Link to="/editor" activeClassName="active">
+        Image Editor
+      </Link>
+      {" | "}
       <Link to="/about" activeClassName="active">
         About
       </Link>
