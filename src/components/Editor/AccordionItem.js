@@ -12,23 +12,21 @@ class AccordionItem extends React.Component {
           }
 
     render()
-    {  
-       console.log(this.props.images);
-
-    return(  
-            [<Accordion.Title active={this.props.activeIndex === 0} index={0} onClick={this.props.onclick}>
-            <Icon name='dropdown' />
-            {this.props.title}
-            </Accordion.Title>,
-            <Accordion.Content active={this.props.activeIndex === 0}>
-                
-                {this.props.images.map(image=>{
-                    <PropImage key={image.id} {...image}  />
-                })}
-
-            </Accordion.Content>  
-            ]
-     ) 
+    {   
+    return( 
+           <div>
+            <Accordion.Title active={this.props.activeIndex === 0} index={0} onClick={this.props.onclick}>
+                <Icon name='dropdown' />
+                {this.props.title}
+            </Accordion.Title>
+             
+            <Accordion.Content active={this.props.activeIndex === 0}> 
+                 {this.props.images.map(image=>{
+                  <PropImage key={image.id} {...image}  />
+                 })} 
+            </Accordion.Content>   
+           </div>
+    );
    };
 };
 

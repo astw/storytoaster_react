@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Accordion, Icon } from 'semantic-ui-react'
 import PropImage from './PropImage';
-import AccodionItem from './AccordionItem'; 
+//import AccodionItem from './AccordionItem';  
 
 export default class NavAccording extends React.Component  {
 
@@ -21,20 +21,16 @@ export default class NavAccording extends React.Component  {
   render() {
     const { activeIndex } = this.state; 
 
-    return ( 
-
+    return (  
       <Accordion styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
           <Icon name='dropdown' />
-          What is a dog?
+           My Props
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
+        <Accordion.Content active={activeIndex === 0}> 
+           { this.props.propImages.map(image => <PropImage key={image.id} {...image} />)} 
+        </Accordion.Content>
          
-           { this.props.propImages.map(image => <PropImage key={image.id} {...image} />)}
-
-        </Accordion.Content> 
-  
-
         <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick}>
           <Icon name='dropdown' />
           What kinds of dogs are there?

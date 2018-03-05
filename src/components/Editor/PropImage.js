@@ -1,8 +1,9 @@
 import React, { PropTypes } from "react";
+import appStyle from "../../styles/editor.css";
 
 const PropImage = (image) =>{   
     return(
-         <img src={image.thumb} width="70" height="70" /> 
+         <img className ="nav-image" src={image.thumb} /> 
     );
 }
 

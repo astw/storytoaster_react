@@ -13,9 +13,7 @@ class ImageApiProxy {
     let iType = "image";
     if(photo == true){
       iType = "photo"
-    }
-
-    debugger; 
+    } 
 
     let imageUrl = config.apiRootPath + "mediaServer/" + iType +  "?cat=" + imageType + "&pageSize=" + pageSize 
     + "&pageNumber=" + pageNumber +"&random=" + random + '&theme=' + theme +'&tag='+ tag;

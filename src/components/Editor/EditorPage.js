@@ -18,13 +18,13 @@ class EditorPage extends React.Component {
   }
 
   render() {  
- 
+  
     const { propImages } = this.props;   
     return (
-      <div>
+      <div className="left-nav">
         <h1>images</h1> 
+          <NavAccording propImages={propImages} /> 
           <div className="clear" />  
-          <NavAccording propImages={propImages} />
        </div>
     );
   }
