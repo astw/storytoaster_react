@@ -1,8 +1,8 @@
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import fabric from "fabric";
-import bookStyle from '../../styles/book-style.less';
-import appStyle from "../../styles/styles.css";
+// import bookStyle from '../../styles/book-style.less';
+// import appStyle from "../../styles/styles.css";
 import { books as localbooks } from "./LocalBooks.json";
 import storyToasterTextBox from './storyToasterTextBox';
  

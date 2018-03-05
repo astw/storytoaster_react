@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import * as imageActions from "../../actions/ImageActions";  
 import configureStore from "../../store/configureStore";
 import PropImage from "./PropImage";
+import NavAccording from "./PicturesNav";
 
 class EditorPage extends React.Component {
 
@@ -17,16 +18,13 @@ class EditorPage extends React.Component {
   }
 
   render() {  
-    
-    let {store} = this.context;
-
-    debugger; 
+ 
     const { propImages } = this.props;   
     return (
       <div>
-        <h1>images</h1>
-          { propImages.map(image => <PropImage {...image} />)}
+        <h1>images</h1> 
           <div className="clear" />  
+          <NavAccording propImages={propImages} />
        </div>
     );
   }
