@@ -34,7 +34,7 @@ class NavAccording extends React.Component {
     this.state = { activeIndex: 0 }
   }
 
-  handleClick = (e, titleProps) => {
+   function handleClick(e, titleProps){
     const { index } = titleProps
     const { activeIndex } = this.state
     const newIndex = activeIndex === index ? -1 : index
@@ -43,11 +43,7 @@ class NavAccording extends React.Component {
   }
 
   render() {
-
-    console.log(this.props);
-
     const { classes } = this.props;
-
     return (
       <div>
         {/* {this.props.propImages.map(image => <PropImage key={image.id} {...image} />)} */}
@@ -85,6 +81,8 @@ class NavAccording extends React.Component {
 
 NavAccording.propTypes = {
   classes: PropTypes.object.isRequired,
+  propImages:PropTypes.array.isRequired,
+  backgroundImages:PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(NavAccording);

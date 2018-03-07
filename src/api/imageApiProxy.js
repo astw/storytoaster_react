@@ -43,8 +43,7 @@ class ImageApiProxy {
 
   static getBackgroundImages(pageNumber, pageSize) {
     return this.getImages('background', pageNumber, pageSize)
-      .then(data =>{
-        console.log('background:', data.links);
+      .then(data =>{ 
         return data.links
         });
   }
