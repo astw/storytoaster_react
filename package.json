@@ -24,6 +24,8 @@
     "bootstrap": "3.3.6",
     "fabric": "^2.1.0",
     "jquery": "2.2.3",
+    "material-ui": "^1.0.0-beta.35",
+    "material-ui-icons": "^1.0.0-beta.35",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-fabricjs": "^0.1.6",
@@ -31,7 +33,7 @@
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
-    "redux-thunk": "2.0.1", 
+    "redux-thunk": "2.0.1",
     "toastr": "2.1.2"
   },
   "devDependencies": {

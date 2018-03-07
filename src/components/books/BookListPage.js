@@ -4,10 +4,12 @@ import { bindActionCreators } from "redux";
 import * as bookActions from "../../actions/bookActions";
 import BookList from "./BookList.js";
 
+
 class BookListPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {};
+
   }
 
   componentDidMount() {

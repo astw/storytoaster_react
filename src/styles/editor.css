@@ -1,7 +1,8 @@
 .left-nav {
     margin-top:10px;
     width: 180px;
-    height: 94px;
+    padding: 0px;
+    max-height: 600px;
 }
 
 .nav-image {
@@ -16,18 +17,16 @@
     border: 2px solid #f5b025
 }
 
-.accordion > .content { 
-    padding:1px !important;
+.content {
+    padding:1px;
     margin: 0px;
-    max-height: 400px;
     overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .ui.styled.accordion .title  {
     padding: 0px !important;
     font-size:16px !important;
     background: lightgray !important;
-    height:44px ; 
-    vertical-align: middle 
+    height:44px ;
+    vertical-align: middle
 }

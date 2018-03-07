@@ -2,6 +2,7 @@ export default {
   authors: [],
   courses: [],
   books: [],
-  propImages:[],
+  propImages: [],
+  backgroundImages: [],
   ajaxCallsInProgress: 0
 };
