@@ -6,9 +6,6 @@ export default function imageReducer(state = initialState.propImages, action) {
     case types.LOAD_PROP_IMAGES_SUCCESS:
       return action.propImages;
 
-    case types.LOAD_BACKGROUND_IMAGES_SUCCESS:
-      return action.backgroundImages;
-
     default:
       return state;
   }

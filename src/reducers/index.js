@@ -3,10 +3,8 @@ import courses from "./courseReducer";
 import authors from "./authorReducer";
 import books from "./bookReducer";
 import propImages from "./propImageReducer";
-import backgroundImages from "./propImageReducer";
+import backgroundImages from "./backgroundImageReducer";
 import ajaxCallsInProgress from "./ajaxStatusReducer";
-
-debugger;
 
 const rootReducer = combineReducers({
   courses,

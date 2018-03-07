@@ -68,11 +68,6 @@ class NavAccording extends React.Component {
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          <ExpansionPanel disabled>
-            <div className='left-nav content'>
-              {this.props.propImages.map(image => <PropImage className="nav-image" key={image.id} {...image} />)}
-            </div>
-          </ExpansionPanel>
         </div>
       </div>
     )
@@ -81,8 +76,8 @@ class NavAccording extends React.Component {
 
 NavAccording.propTypes = {
   classes: PropTypes.object.isRequired,
-  propImages:PropTypes.array.isRequired,
-  backgroundImages:PropTypes.array.isRequired
+  propImages: PropTypes.array.isRequired,
+  backgroundImages: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(NavAccording);

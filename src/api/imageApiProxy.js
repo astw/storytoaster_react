@@ -18,7 +18,16 @@ class ImageApiProxy {
     let imageUrl = config.apiRootPath + "mediaServer/" + iType + "?cat=" + imageType + "&pageSize=" + pageSize
       + "&pageNumber=" + pageNumber + "&random=" + random + '&theme=' + theme + '&tag=' + tag;
 
-    return fetch(imageUrl)
+    let headers = new Headers();
+    headers.append('pragma', 'force-cache');
+    headers.append('cache-control', 'force-cache');
+
+    let option = {
+      method: 'GET',
+      headers: headers
+    };
+
+    return fetch(imageUrl, {cache: "force-cache"})
       .then(resp => resp.json()) // Transform the data into json
       .then(function (images) {
         images.links = images.links.map((link) => {
@@ -43,9 +52,9 @@ class ImageApiProxy {
 
   static getBackgroundImages(pageNumber, pageSize) {
     return this.getImages('background', pageNumber, pageSize)
-      .then(data =>{ 
+      .then(data => {
         return data.links
-        });
+      });
   }
 }
 

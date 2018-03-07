@@ -16,6 +16,7 @@ export function loadPropImages() {
     return imageApi.getPropImages().then(images => {
       dispatch(loadPropImagesSuccess(images));
     }).catch(error => {
+      dispatch(ajaxCallError(error));
       throw (error);
     });
   };
@@ -27,19 +28,8 @@ export function loadBackgroundImages() {
     return imageApi.getBackgroundImages().then(images => {
       dispatch(loadBackgroundImagesSuccess(images));
     }).catch(error => {
+      dispatch(ajaxCallError(error));
       throw (error);
     });
   };
 }
-
-
-// export function loadBackgroundImages(){
-//   return function(dispatch){
-//     dispatch(beginAjaxCall());
-//     return imageApi.getBackgroundImages().then((images) =>{
-//        dispatch(loadBackgroundImagesSuccess(images));
-//     }).catch(error=>{
-//       throw(err);
-//     });
-//   }
-// }
