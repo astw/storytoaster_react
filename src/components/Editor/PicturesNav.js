@@ -34,7 +34,7 @@ class NavAccording extends React.Component {
     this.state = { activeIndex: 0 }
   }
 
-   function handleClick(e, titleProps){
+  handleClick = (e, titleProps) => {
     const { index } = titleProps
     const { activeIndex } = this.state
     const newIndex = activeIndex === index ? -1 : index
