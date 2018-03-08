@@ -7,12 +7,12 @@ import configureStore from "../../store/configureStore";
 import PropImage from "./PropImage";
 import NavAccording from "./PicturesNav";
 
-class EditorPage extends React.Component {
+import Button from "material-ui/Button";
 
+class EditorPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-    };
+    this.state = {};
   }
 
   componentWillMount() {
@@ -21,11 +21,18 @@ class EditorPage extends React.Component {
   }
 
   render() {
-
     return (
       <div className="left-nav">
         <h1>images</h1>
-        <NavAccording propImages={this.props.propImages} backgroundImages={this.props.backgroundImages} />
+
+        <Button variant="fab" color="primary">
+          // <ContentAdd />
+        </Button>
+
+        <NavAccording
+          propImages={this.props.propImages}
+          backgroundImages={this.props.backgroundImages}
+        />
         <div className="clear" />
       </div>
     );
