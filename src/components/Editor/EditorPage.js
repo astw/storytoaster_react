@@ -8,6 +8,7 @@ import PropImage from "./PropImage";
 import NavAccording from "./PicturesNav";
 
 import Button from "material-ui/Button";
+import AddIcon from 'material-ui-icons/Add';
 
 class EditorPage extends React.Component {
   constructor(props, context) {
@@ -21,19 +22,23 @@ class EditorPage extends React.Component {
   }
 
   render() {
+
     return (
-      <div className="left-nav">
-        <h1>images</h1>
+      <div className="editor">
+        <div className="left-nav">
+          <h1>images</h1>
+           <NavAccording
+            propImages={this.props.propImages}
+            backgroundImages={this.props.backgroundImages}
+          />
+          <div className="clear" />
 
-        <Button variant="fab" color="primary">
-          // <ContentAdd />
-        </Button>
 
-        <NavAccording
-          propImages={this.props.propImages}
-          backgroundImages={this.props.backgroundImages}
-        />
-        <div className="clear" />
+                  <Button variant="fab" color="primary" className="fab">
+                      <AddIcon />
+                  </Button>
+        </div>
+         <div className="clear"></div>
       </div>
     );
   }
