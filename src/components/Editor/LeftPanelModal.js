@@ -6,7 +6,6 @@ import * as imageActions from "../../actions/ImageActions";
 import configureStore from "../../store/configureStore";
 import PropImage from "./PropImage";
 import NavAccording from "./PicturesNav";
-import LeftPanelModal from './LeftPanelModal';
 
 import Button from "material-ui/Button";
 import AddIcon from 'material-ui-icons/Add';
@@ -20,30 +19,18 @@ function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
-
-
   const styles = theme => ({
   paper: {
-    position: 'absolute',
-    width: theme.spacing.unit * 50,
+    width: "25%",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 4,
+    padding: 10,
+    margin: "10 auto"
   },
 });
 
 
-class EditorPage extends React.Component {
+class LeftPanelModal extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -51,18 +38,6 @@ class EditorPage extends React.Component {
       open: false,
     };
   }
-
-  handleOpen = () => {
-    this.setState({
-      open: true
-    });
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false
-    });
-  };
 
   componentWillMount() {
     this.props.actions.loadPropImages();
@@ -72,27 +47,27 @@ class EditorPage extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="editor">
-        <div className="left-nav">
-           <LeftPanelModal open={this.state.open} handleClose={this.handleClose} />
-
-          <h1>images</h1>
-           <NavAccording
-            propImages={this.props.propImages}
-            backgroundImages={this.props.backgroundImages}
-          />
-          <div className="clear" />
-             <Button variant="fab" color="primary" className="fab" onClick={this.handleOpen}>
-                      <AddIcon />
-             </Button>
-        </div>
-         <div className="clear"></div>
-      </div>
+      <div>
+          <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.props.open}
+                    onClose={this.props.handleClose}
+                  >
+                  <div   className={classes.paper, 'center-modal'}>
+                      <NavAccording
+                        panelClass = "image-panel"
+                        propImages={this.props.propImages}
+                        backgroundImages={this.props.backgroundImages}
+                      />
+                  </div>
+            </Modal>
+       </div>
     );
   }
 }
 
-EditorPage.propTypes = {
+LeftPanelModal.propTypes = {
    classes: PropTypes.object.isRequired
 }
 
@@ -109,7 +84,5 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const EditorPageWrapped = withStyles(styles)(EditorPage);
-export default connect(mapStateToProps, mapDispatchToProps)(EditorPageWrapped);
-
-//export default connect(mapStateToProps, mapDispatchToProps)(EditorPage);
+const LeftPanelModalWrapped = withStyles(styles)(LeftPanelModal);
+export default connect(mapStateToProps, mapDispatchToProps)(LeftPanelModalWrapped);

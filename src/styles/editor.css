@@ -6,13 +6,16 @@
   height: 100%;
 }
 
+.image-panel {
+   width:85% auto;
+}
+
 .left-nav {
     margin-left:10px;
     margin-top:10px;
     width: 180px;
     padding: 0px;
-    max-height: 600px;
-    background: grey;
+    max-height: 600px
 }
 
 .nav-image {
@@ -24,7 +27,7 @@
 }
 
 .nav-image:hover {
-    border: 2px solid #f5b025
+    border: 2px solid
 }
 
 .content {

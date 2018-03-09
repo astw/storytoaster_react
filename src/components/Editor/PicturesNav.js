@@ -48,12 +48,12 @@ class NavAccording extends React.Component {
       <div>
         {/* {this.props.propImages.map(image => <PropImage key={image.id} {...image} />)} */}
         <div className={classes.root}>
-          <ExpansionPanel>
+          <ExpansionPanel defaultExpanded>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>Props</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.SummaryDetails} >
-              <div className='left-nav content'>
+              <div className='{this.props.panelClass} content'>
                 {this.props.propImages.map(image => <PropImage className="nav-image" key={image.id} {...image} />)}
               </div>
             </ExpansionPanelDetails>
@@ -63,7 +63,7 @@ class NavAccording extends React.Component {
               <Typography className={classes.heading}>Background Picture</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.SummaryDetails} >
-              <div className='left-nav content'>
+              <div className='{this.props.panelClass} content'>
                 {this.props.backgroundImages.map(image => <PropImage className="nav-image" key={image.id} {...image} />)}
               </div>
             </ExpansionPanelDetails>
