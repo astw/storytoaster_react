@@ -42,6 +42,12 @@ class NavAccording extends React.Component {
     this.setState({ activeIndex: newIndex })
   }
 
+  chooseImage = param => (e) =>{
+      console.log('image is clicked');
+      console.log(param);
+      console.log(e.target.src); 
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -54,7 +60,7 @@ class NavAccording extends React.Component {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.SummaryDetails} >
               <div className='{this.props.panelClass} content'>
-                {this.props.propImages.map(image => <PropImage className="nav-image" key={image.id} {...image} />)}
+                {this.props.propImages.map(image => <PropImage className="nav-image" key={image.id} {...image} chooseImage = {this.chooseImage} />)}
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -64,7 +70,7 @@ class NavAccording extends React.Component {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.SummaryDetails} >
               <div className='{this.props.panelClass} content'>
-                {this.props.backgroundImages.map(image => <PropImage className="nav-image" key={image.id} {...image} />)}
+                {this.props.backgroundImages.map(image => <PropImage className="nav-image" key={image.id} {...image} chooseImage = {this.chooseImage} />)}
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>

@@ -1,0 +1,43 @@
+
+
+.editor{
+  display: inline-block;
+  position: relative;
+  height: auto;
+  min-width: 600px;
+  top: 60px;
+  left: 120px;
+  /* right: 20px; */
+  background-color: #eee;
+  float: left;
+  margin: 0px auto;
+}
+
+.page-panel {
+  position:relative;
+  top:0px;
+  float:left;
+  left:5px;
+  background: red;
+}
+
+.page-big {
+  position: relative;
+  float: left;
+  min-width: 500px;
+  min-height: 380px;
+  background-color: transparent;
+  border:solid;
+  border-width: 6px;
+  border-color: #becfd5;
+  margin: 5px;
+}
+.active {
+  border-color: #F5B025;
+}
+
+/*  w:h = 1.3  */
+.page-canvas {
+  width: 624px;
+  height: 480px;
+}

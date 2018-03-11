@@ -28,16 +28,15 @@
     _render: function (ctx) {
         this.callSuper('_render', ctx);
     }
-  }); 
+  });
 
-  
-  fabric.StoryToasterIText.fromObject = function (object) {
+
+  fabric.StoryToasterIText.fromObject = function (object, callback) {
     var instance = new fabric.StoryToasterIText(object.text, fabric.util.object.clone(object), function () {
       return instance && instance.canvas && instance.canvas.renderAll();
-    }); 
-    console.log('.... load finished')
+    });
+    callback(instance);
     return instance;
   };
-  
-})( typeof exports != 'undefined' ? exports : this);
 
+})( typeof exports != 'undefined' ? exports : this);
