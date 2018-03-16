@@ -65,9 +65,20 @@ class BookEditor extends React.Component {
     });
   };
 
-  pageDesignerClick = () =>{
-     console.log('page design click');
+  designerClicked = () =>{
+     console.log('left page design click');
+     this.props.actions.pageRightClicked();
   };
+
+  // designerClicked = () =>{
+  //    console.log('right page design click');
+  //    this.props.actions.pageLeftClicked();
+  // };
+
+  isPageActive = ()=>{
+      console.log('is page active?');
+      return true;
+  }
 
   componentWillMount() {
     this.props.actions.loadPropImages();
@@ -86,22 +97,22 @@ class BookEditor extends React.Component {
 
   render() {
     const { classes } = this.props;
+    ///... logic to determine which one is active;
+    const leftActive = true;
+    const rightActive = false;
+
     return (
       <div className="book-editor">
-
-
         <LeftPanelModal open={this.state.open} handleClose={this.handleClose} />
             <div className="clear" />
         <Button variant="fab" color="primary" className="fab" onClick={this.handleOpen}>
                  <AddIcon />
         </Button>
-
-
         <div className='editor'>
-          <div className="page-big active" onClick= { this.handleClick}  >
+          <div className=`{page-big ${leftActive} }` onClick= { this.designerClicked (this.props.leftPage)}  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="left_canvas" ></canvas>
           </div>
-          <div className="page-big" onClick= { this.handleClick}  >
+          <div className=`page-big ${rightActive} }` onClick= { this.designerClicked(this.props.leftPage) }  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="right_canvas" ></canvas>
           </div>
         </div>
@@ -113,7 +124,7 @@ class BookEditor extends React.Component {
     );
   }
 }
-// <PageDesigner handleClick = {this.pageDesignerClick}  />
+
 BookEditor.propTypes = {
    classes: PropTypes.object.isRequired
 }

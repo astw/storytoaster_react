@@ -5,7 +5,7 @@ import appStyle from "../../styles/page-designer.css";
 
 const PageDesigner = (props) =>{
     return(
-      <div className="page-big active" onClick= { props.handleClick}  >
+      <div className="page-big {props.active}" onClick= { props.handleClick}  >
         <canvas className="page-canvas" crossOrigin="Anonymous" id="left_canvas" ></canvas>
       </div>
     );
