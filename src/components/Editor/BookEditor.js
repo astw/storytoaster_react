@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as imageActions from "../../actions/ImageActions";
+import * as editorActions from "../../actions/editorActions";
+
 import configureStore from "../../store/configureStore";
 import PropImage from "./PropImage";
 import NavAccording from "./PicturesNav";
@@ -65,15 +67,15 @@ class BookEditor extends React.Component {
     });
   };
 
-  designerClicked = () =>{
-     console.log('left page design click');
-     this.props.actions.pageRightClicked();
+  designerRightClicked = () =>{
+     console.log('right page design click');
+     this.props.editorActions.pageRightClicked();
   };
 
-  // designerClicked = () =>{
-  //    console.log('right page design click');
-  //    this.props.actions.pageLeftClicked();
-  // };
+  designerLeftClicked = () =>{
+     console.log('left right page design click');
+     this.props.editorActions.pageLeftClicked();
+  };
 
   isPageActive = ()=>{
       console.log('is page active?');
@@ -109,10 +111,10 @@ class BookEditor extends React.Component {
                  <AddIcon />
         </Button>
         <div className='editor'>
-          <div className=`{page-big ${leftActive} }` onClick= { this.designerClicked (this.props.leftPage)}  >
+          <div className="{page-big `${leftActive}` }" onClick= { this.designerLeftClicked  }  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="left_canvas" ></canvas>
           </div>
-          <div className=`page-big ${rightActive} }` onClick= { this.designerClicked(this.props.leftPage) }  >
+          <div className="page-big `${rightActive}` }" onClick= { this.designerRightClicked  }  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="right_canvas" ></canvas>
           </div>
         </div>
@@ -138,7 +140,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(imageActions, dispatch)
+    actions: bindActionCreators(imageActions, dispatch),
+    editorActions: bindActionCreators(editorActions, dispatch)
   };
 }
 
