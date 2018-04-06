@@ -52,6 +52,8 @@ class BookEditor extends React.Component {
     super(props, context);
     this.state = {
       open: false,
+      leftActive: true,
+      rightActive: false
     };
   };
 
@@ -69,16 +71,31 @@ class BookEditor extends React.Component {
 
   designerRightClicked = () =>{
      console.log('right page design click');
+     this.setState({
+       leftActive: false,
+       rightActive: true
+     });
      this.props.editorActions.pageRightClicked();
   };
 
   designerLeftClicked = () =>{
-     console.log('left right page design click');
+     console.log('left page design click');
+     this.setState({
+       leftActive: true,
+       rightActive: false
+     });
+
+     console.log(this.state.leftActive);
      this.props.editorActions.pageLeftClicked();
   };
 
   isPageActive = ()=>{
       console.log('is page active?');
+      this.setState({
+        leftActive: true,
+        rightActive: false
+      });
+
       return true;
   }
 
@@ -100,8 +117,8 @@ class BookEditor extends React.Component {
   render() {
     const { classes } = this.props;
     ///... logic to determine which one is active;
-    const leftActive = true;
-    const rightActive = false;
+ console.log(this.state.leftActive);
+ console.log(this.state.rightActive);
 
     return (
       <div className="book-editor">
@@ -111,10 +128,10 @@ class BookEditor extends React.Component {
                  <AddIcon />
         </Button>
         <div className='editor'>
-          <div className="{page-big `${leftActive}` }" onClick= { this.designerLeftClicked  }  >
+          <div className={ "page-big " + (this.state.leftActive ? "active" : "") } onClick= { this.designerLeftClicked  }  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="left_canvas" ></canvas>
           </div>
-          <div className="page-big `${rightActive}` }" onClick= { this.designerRightClicked  }  >
+          <div className={ "page-big " + (this.state.rightActive ? "active" : "")}  onClick= { this.designerRightClicked  }  >
             <canvas className="page-canvas" crossOrigin="Anonymous" id="right_canvas" ></canvas>
           </div>
         </div>
